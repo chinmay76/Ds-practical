@@ -1,36 +1,34 @@
-class Stack:
-    
-    def __init__(self):
-        self.stack_arr = []
-        
-    def push(self,value):
-        self.stack_arr.append(value)
-        
-    def pop(self):
-        if len(self.stack_arr) == 0:
-            print('Stack is empty!')
-            return None
-        else:
-            self.stack_arr.pop()
-        
-    def get_head(self):
-        if len(self.stack_arr) == 0:
-            print('Stack is empty!')
-            return None
-        else:
-            return self.stack_arr[-1]
-    
-    def display(self):
-        if len(self.stack_arr) == 0:
-            print('Stack is empty!')
-            return None
-        else:
-            print(self.stack_arr)
-    
-stack = Stack()
-stack.push(4)
-stack.push(7)
-stack.push(6)
-stack.pop()
-stack.display()
-stack.get_head()
+from sys import maxsize 
+
+
+def createStack(): 
+	stack = [] 
+	return stack 
+
+def isEmpty(stack): 
+	return len(stack) == 0
+
+
+def push(stack, item): 
+	stack.append(item) 
+	print(item + " pushed to stack ") 
+	
+
+def pop(stack): 
+	if (isEmpty(stack)): 
+		return str(-maxsize -1) 
+	
+	return stack.pop() 
+
+
+def peek(stack): 
+	if (isEmpty(stack)): 
+		return str(-maxsize -1) 
+	return stack[len(stack) - 1] 
+
+ 
+stack = createStack() 
+push(stack, str(10)) 
+push(stack, str(20)) 
+push(stack, str(30)) 
+print(pop(stack) + " popped from stack") 
